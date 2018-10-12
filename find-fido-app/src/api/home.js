@@ -16,14 +16,14 @@ class Home extends Component {
     componentDidMount(){
         //get data from url
         axios.get('http://localhost:8080/api/home')
-        .then((response) => {
-            console.log(response);
+        .then((res) => {
+            console.log(res);
             //pull title and description from JSON data
                 this.setState({
-                title: response.title,
-                description: response.description,
+                    title: res.data[0].title,
+                    description: res.data[0].description,
                 });
-            
+            console.log(this.state.title);
             //error catch
             }).catch((err) => {
                 console.log(err)
