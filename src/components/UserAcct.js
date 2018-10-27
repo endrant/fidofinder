@@ -18,7 +18,7 @@ class UserAcct extends React.Component{
     }
 
         render(){
-        const {user} = this.state;
+        const {user} = this.props;
                
         return(
             <div className="container">
@@ -28,11 +28,12 @@ class UserAcct extends React.Component{
                 <div className="profileDetails">   
                 <div className="row">
                         <div className="column-label">Username: </div>
+                        <br />
                         <div className="column-data">{user.username}</div>
                     </div>
                     <div className="row">
                         <div className="column-label">First Name: </div>
-                        <div className="column-data">{user.firstname}</div>
+                        <div className="column-data">{user.firstName}</div>
                     </div>
                     <div className="row">
                         <div className="column-label">Last Name: </div>
@@ -68,14 +69,13 @@ class UserAcct extends React.Component{
                 <div className="profileLinks">
                     <div className="formLink">
                         <br />
-                        To report a Lost or Found dog: <br />
-                        <Link to="/dogForm">Report Lost/Found Dog</Link>
-                    </div>
+                        Report a Lost or Found Dog:
+                        <Link to="/addDog">Lost/Found Dog Report</Link>
+                       </div>
                     <br />
                     <div className="logout"> 
                         Logout of account:<br />
-                        <Link to="/logout">Logout</Link>
-                    </div>
+                        <Link to="/login">Logout</Link></div>
                 </div>
                 <hr />
         

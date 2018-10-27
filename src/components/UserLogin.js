@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {findfido} from '../findfido.jpg';
+import {findfido} from '../images/findfido.jpg';
 import {userAct} from '../actions/userAct';
 
 class UserLogin extends React.Component{
@@ -47,16 +47,16 @@ class UserLogin extends React.Component{
             <div className="login">
                 <h2>Login</h2>
                 <form name="login-form" action="action_page.php" onSubmit={this.handleSubmit}>
-                   
+                <img src="findfido" alt="ff-logo" className="img-thumbnail"></img>
                     <div className={'login-group' + (submitted && !username ? ' has-error' : '')}>
                         <label htmlFor="username"><b>Username: </b></label>
-                        <input type="text" placeholder="Enter Username" name="username" value="username" onChange={this.handleChange} required />
+                        <input type="text" placeholder="" name="username" value={username}  onChange={this.handleChange} required />
                         {submitted && !username &&
                             <div className="error-resp">Username is required</div>
                         }
                     <div className={'login-group' + (submitted && !password ? ' has-error' : '')}>
                         <label htmlFor="password"><b>Password: </b></label>
-                        <input type="password" placeholder="Enter Password" name="password" value="password" onChange={this.handleChange} required />
+                        <input type="password" placeholder="" name="password" value={password} onChange={this.handleChange} required />
                         {submitted && !password &&
                             <div className="error-resp">Password is required</div>
                         }
@@ -64,8 +64,9 @@ class UserLogin extends React.Component{
                         <button type="submit">Login</button>
                         {loggedIn}
                     </div>
-
+                    
                     <div className="container" >
+                        Don't have an account? -
                        <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>

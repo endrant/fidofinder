@@ -9,7 +9,8 @@ import {UserLogin} from './components/UserLogin';
 //import {UserRoute} from './components/UserRoute';
 import {UserAcct} from './components/UserAcct';
 import {alertsAct} from './actions/alertsAct';
-//import MsgBoard from './MsgBoard';
+import {DogForm} from './components/DogForm';
+import {DogProf} from './components/DogProf';
 
 class App extends Component {
   constructor(props){
@@ -34,6 +35,8 @@ class App extends Component {
               <Route path="/login" component={UserLogin} />
               <Route path="/register" component={UserReg} />
               <Route path="/getUser" component={UserAcct} />
+              <Route path="/addDog" component={DogForm} />
+              <Route path="/getDog" component={DogProf} />
             </div>
           </Router>
         </div>

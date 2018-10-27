@@ -64,34 +64,34 @@ class UserReg extends React.Component{
                         <hr />
 
                         <label for="username"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Username" name="username" value={user.username} required />
+                        <input type="text" placeholder="Enter Username" name="username" value={user.username} onChange={this.handleChange} onrequired />
 
                         <label for="password"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="password" value={user.password} required />
+                        <input type="password" placeholder="Enter Password" name="password" value={user.password} onChange={this.handleChange} required />
 
                         <label for="firstName"><b>First Name:</b></label>
-                        <input type="Text" placeholder="Enter First Name" name="firstName" value={user.firstName} required />
+                        <input type="Text" placeholder="Enter First Name" name="firstName" value={user.firstName} onChange={this.handleChange} required />
                         
                         <label for="lastName"><b>Last Name:</b></label>
-                        <input type="Text" placeholder="Enter Last Name" name="lastName" value={user.lastName} required />
+                        <input type="Text" placeholder="Enter Last Name" name="lastName" value={user.lastName} onChange={this.handleChange} required />
                        
                         <label for="streetAdd"><b>Street Address:</b></label>
-                        <input type="Text" placeholder="Enter Street Address" name="streetAdd" value={user.streetAdd} required />
+                        <input type="Text" placeholder="Enter Street Address" name="streetAdd" value={user.streetAdd} onChange={this.handleChange} required />
                         
                         <label for="city"><b>City:</b></label>
-                        <input type="Text" placeholder="Enter City" name="city" value={user.city} required />
+                        <input type="Text" placeholder="Enter City" name="city" value={user.city} onChange={this.handleChange} required />
 
                         <label for="state"><b>State:</b></label>
-                        <input type="Text" placeholder="Enter State" name="state" value={user.state} required />
+                        <input type="Text" placeholder="Enter State" name="state" value={user.state} onChange={this.handleChange} required />
                         
                         <label for="zip"><b>Zip:</b></label>
-                        <input type="Text" placeholder="Enter Zip" name="zip" value={user.zip} required />
+                        <input type="Text" placeholder="Enter Zip" name="zip" value={user.zip} onChange={this.handleChange} required />
                         
                         <label for="email"><b>Email:</b></label>
-                        <input type="Text" placeholder="Enter Email" name="email" value={user.email} required />
+                        <input type="Text" placeholder="Enter Email" name="email" value={user.email} onChange={this.handleChange} required />
                         
                         <label for="phone"><b>Phone:</b></label>
-                        <input type="Text" placeholder="Enter Phone" name="phone" value={user.phone} required />
+                        <input type="Text" placeholder="Enter Phone" name="phone" value={user.phone} onChange={this.handleChange} required />
                         <hr />
 
                         <button type="submit" class="registerbtn">Register</button>

@@ -51,9 +51,8 @@ function login(username, password){
 }
 //logout action creator
 function logout(){
-        userServ.logout();
-        history.push('/login');
-        
+    history.push('/login');
+    userServ.logout();
         return {
              type: userConst.LOGOUT
         };
@@ -101,7 +100,6 @@ function register(user) {
 
 //get user action creator
 function getUser(){
-    //login request
     return dispatch => {
         dispatch(request({}));
         //calls async task
