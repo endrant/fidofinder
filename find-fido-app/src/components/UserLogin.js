@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+//import {findfido} from '../images/findfido.jpg';
 import {userAct} from '../actions/userAct';
 
 class UserLogin extends React.Component{
@@ -45,25 +46,27 @@ class UserLogin extends React.Component{
         return (
             <div className="login">
                 <h2>Login</h2>
-                <form name="login-form" autoComplete="on" onSubmit={this.handleSubmit}>
+                <form name="login-form" action="action_page.php" onSubmit={this.handleSubmit}>
                     <div className={'login-group' + (submitted && !username ? ' has-error' : '')}>
-                        <label htmlFor="username">Username</label>
-                        <input type="text" className="login-control" name="username" value={username} onChange={this.handleChange} />
+                        <label htmlFor="username"><b>Username: </b></label>
+                        <input type="text" placeholder="" name="username" value={username}  onChange={this.handleChange} required />
                         {submitted && !username &&
                             <div className="error-resp">Username is required</div>
                         }
-                    </div>
                     <div className={'login-group' + (submitted && !password ? ' has-error' : '')}>
-                        <label htmlFor="password">Password</label>
-                        <input type="password" className="login-control" name="password" value={password} onChange={this.handleChange} />
+                        <label htmlFor="password"><b>Password: </b></label>
+                        <input type="password" placeholder="" name="password" value={password} onChange={this.handleChange} required />
                         {submitted && !password &&
                             <div className="error-resp">Password is required</div>
                         }
                     </div>
-                    <div className="login-group">
-                        <button className="btn btn-primary" type="submit">Login</button><br />
+                        <button type="submit">Login</button>
                         {loggedIn}
-                        <Link to="/screens/UserReg" className="btn btn-link">Register</Link>
+                    </div>
+                    
+                    <div className="container" >
+                        Don't have an account? -
+                       <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>
             </div>

@@ -12,66 +12,51 @@ function login(username, password){
         method: 'POST',
         body: JSON.stringify({username, password})
         };
+
    
     //connect to backend 
     return axios.get('http://localhost:8080/api/userServ', request)
-    //.then(handleResponse)
-    .then(() => {
-        const user = {
-            username: 'username',
-            password: '',
-            firstName: 'Usre',
-            lastName: 'Number Ojne',
-            streetAdd: '1 Street Lane',
-            city: 'Paris',
-            state: 'France',
-            zip: '11111',
-            email: 'user@email.com',
-            phone: '5554441234'
-        };
-        localStorage.setItem('user', JSON.stringify(user));
-        return user;
-    });
+    //.then(handleResponse) 
+    .then (users => {
+        localStorage.setItem('users', JSON.stringify(users));
+        return users;
+        });
 }
+    
+
 //Delete user from local storage on logout
 function logout(){
-    localStorage.removeItem('user');
+    localStorage.removeItem('users');
 }
 //register new user
-function register(user){
+function register(users){
     const request = {
         method: 'POST',
-        body: JSON.stringify({user})
+        body: JSON.stringify({users})
     };
-
-    return axios.get('http://localhost:8080/api/userServ', request).then(handleResponse);    
+    //localStorage.setItem('user', JSON.stringify(user));
+    return axios.get('http://localhost:8080/api/userServ', request)
+    .then(handleResponse)
+    .then (users => {
+        localStorage.setItem('users', JSON.stringify(users));
+        return users;
+        });
 }
 
-function getUser(user){
+function getUser(){
     const request = {
         method:'GET',
-        body: JSON.stringify({user})
+        body: JSON.stringify({})
     };
      //connect to backend 
      return axios.get('http://localhost:8080/api/userServ', request)
-     //.then(handleResponse)
-     .then(() => {
-         const user = {
-             username: 'username',
-             password: '',
-             firstName: 'Usre',
-             lastName: 'Number Ojne',
-             streetAdd: '1 Street Lane',
-             city: 'Paris',
-             state: 'France',
-             zip: '11111',
-             email: 'user@email.com',
-             phone: '5554441234'
-         };
-         localStorage.getItem('user', JSON.stringify(user));
-         return user;
-        });
-        }
+     .then(handleResponse)
+     .then (users => {
+         localStorage.getItem('users', JSON.stringify(users));
+         return users;
+         });
+ }
+     
 
 function handleResponse(response){
    
