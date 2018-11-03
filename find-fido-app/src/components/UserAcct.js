@@ -10,72 +10,89 @@ class UserAcct extends React.Component{
     }
 
     constructor(props){
-        super(props)
-            this.state = {
-               user: {
-                    username: '',
-                    password: '',
-                    firstName: '',
-                    lastName: '',
-                    streetAdd: '',
-                    city: '',
-                    state: '',
-                    zip: '' ,
-                    email: '',
-                    phone: ''
-                }
-            }
+        super(props);
+        //fields for user reg form
+        this.state = {
+            users: {}
+        };
     }
-    
-    render(){
-        const {user} = this.state;
-        
+
+        render(){
+        const {users} = this.state;
+               
         return(
             <div className="container">
                 <div className="profileWelcome">
-                    {user.user.map(function(user){
-                        return(
-                            <h1 key={user.id}>
-                                 Welcome, {user.firstName}
-                            </h1>
-                        );
-                    }
-                    )
-                }
+                    <h1>Welcome, {users.firstName}</h1>
                 </div>
-                        }
-                <div className="profileDetails">    
-                    <ul>
-                        <li key={user.id}>
-                                {user.firstName + '' + user.lastName}
-                                {user.streetAdd + ', ' + user.city + ', ' + user.state + ' '}
-                                {user.email},
-                                {user.phone}
-                            </li>
-                           })
-                        }       
-                    </ul>
-                </div>
-                <div className="profileLinks">>
-                    <p>
-                        <Link to="/dogForm">Report Lost/Found Dog</Link>
-                    </p>
+                <div className="profileDetails">   
+                <div className="row">
+                        <div className="column-label">Username: </div>
+                        <br />
+                        <div className="column-data">{users.username}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">First Name: </div>
+                        <div className="column-data">{users.firstName}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">Last Name: </div>
+                        <div className="column-data">{users.lastName}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">Address: </div>
+                        <div className="column-data">{users.streetAddress}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">City: </div>
+                        <div className="column-data">{users.city}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">State: </div>
+                        <div className="column-data">{users.state}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">Zip: </div>
+                        <div className="column-data">{users.zip}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">Email: </div>
+                        <div className="column-data">{users.email}</div>
+                    </div>
+                    <div className="row">
+                        <div className="column-label">Phone: </div>
+                        <div className="column-data">{users.phone}</div>
+                    </div>
+              </div>
+            
+              <hr />
+                <div className="profileLinks">
+                    <div className="formLink">
+                        <br />
+                        Report a Lost or Found Dog:
+                        <Link to="/addDog">Lost/Found Dog Report</Link>
+                       </div>
                     <br />
-                    <p> 
-                        <Link to="/login">Logout</Link>
-                    </p>
+                    <div className="logout"> 
+                        Logout of account:<br />
+                        <Link to="/login">Logout</Link></div>
                 </div>
-            </div>
+                <hr />
         
+            </div>
+            
         );
-    }        
-
+    };        
 }
 
+
 function mapStateToProps(state){
-    const{user} = state;
+    const{user, authentication} = state;
+    const{users} = authentication;
+    
     return {
-        user
+        user, 
+        users
     };
 }
 

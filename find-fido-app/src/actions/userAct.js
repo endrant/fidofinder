@@ -20,7 +20,7 @@ function login(username, password){
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/screens/UserAcct');
+                    history.push('/getUser');
                 },
                 error => {
                     dispatch(fail(error.toString()));
@@ -51,7 +51,8 @@ function login(username, password){
 }
 //logout action creator
 function logout(){
-        userServ.logout();
+    history.push('/login');
+    userServ.logout();
         return {
              type: userConst.LOGOUT
         };
@@ -65,7 +66,7 @@ function register(user) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/components/UserAcct');
+                    history.push('/getUser');
                     dispatch(alertsAct.success('Registration complete!'));
                 },
                 error => { 
@@ -99,15 +100,14 @@ function register(user) {
 
 //get user action creator
 function getUser(){
-    //login request
     return dispatch => {
         dispatch(request({}));
         //calls async task
         userServ.getUser()
-            .then(
-                user => {
+            .then(user => {
                     dispatch(success(user));
-                    history.push('/screens/UserAcct');
+                    history.push('/getUser');
+                    console.log(user);
                 },
                 error => {
                     dispatch(fail(error.toString()));
@@ -116,7 +116,7 @@ function getUser(){
             );
     };
 
-    function request(user) { 
+    function request() { 
             return {
                  type: userConst.GETUSER_REQUEST 
             }
@@ -125,7 +125,7 @@ function getUser(){
         function success(user) {
              return {
                  type: userConst.GETUSER_SUCCESS, 
-                 user 
+                 user
             } 
         }
         function fail(error) {

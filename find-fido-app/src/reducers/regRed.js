@@ -9,7 +9,7 @@ export function registration(state={}, action){
             };
         //clears state
         case userConst.REGISTER_SUCCESS:
-            return{};
+            return state;
         //clears state
         case userConst.REGISTER_FAIL:
             return{};

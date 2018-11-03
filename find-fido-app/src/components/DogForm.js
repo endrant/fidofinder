@@ -133,3 +133,4 @@ function mapStateToProps(state){
 
 const connectedRegisterPage = connect(mapStateToProps)(DogForm);
 export {connectedRegisterPage as DogForm};
+    
