@@ -31,7 +31,7 @@ class App extends Component {
         <div>
           <Router history={history}>
             <div>
-              <Route path="/home" component={Home} />
+              <Route path="/" component={Home} />
               <Route path="/login" component={UserLogin} />
               <Route path="/register" component={UserReg} />
               <Route path="/getUser" component={UserAcct} />
