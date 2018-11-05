@@ -12,15 +12,13 @@ function login(username, password){
         method: 'POST',
         body: JSON.stringify({username, password})
         };
-
-   
-    //connect to backend 
-    return axios.get('http://localhost:8080/api/userServ/login', request)
-    //.then(handleResponse) 
-    .then (users => {
-        localStorage.setItem('users', JSON.stringify(users));
-        return users;
-        });
+        //connect to backend 
+        return axios.get('http://localhost:8080/api/userServ/login', request)
+        //.then(handleResponse) 
+        .then (users => {
+            localStorage.setItem('users', JSON.stringify(users));
+            return users;
+            });
 }
     
 
@@ -35,7 +33,7 @@ function register(users){
         body: JSON.stringify({users})
     };
     //localStorage.setItem('user', JSON.stringify(user));
-    return axios.get('http://localhost:8080/api/userServ', request)
+    return axios.get('http://localhost:8080/api/userServ/register', request)
     .then(handleResponse)
     .then (users => {
         localStorage.setItem('users', JSON.stringify(users));
@@ -49,7 +47,7 @@ function getUser(){
         body: JSON.stringify({})
     };
      //connect to backend 
-     return axios.get('http://localhost:8080/api/userServ', request)
+     return axios.get('http://localhost:8080/api/userServ/getUser/{username}', request)
      .then(handleResponse)
      .then (users => {
          localStorage.getItem('users', JSON.stringify(users));

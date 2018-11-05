@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact'
 
 class Home extends Component {
     constructor(props){
@@ -35,6 +35,17 @@ class Home extends Component {
             <div>
                 <h1>Title: {this.state.title}</h1>
                 <p>Description: {this.state.description}</p>
+                <Dropdown>
+                <DropdownToggle caret color="primary">
+                Material dropdown
+                </DropdownToggle>
+                    <DropdownMenu>
+                    <DropdownItem href="#">Action</DropdownItem>
+                    <DropdownItem href="#">Another Action</DropdownItem>
+                    <DropdownItem href="#">Something else here</DropdownItem>
+                    <DropdownItem href="#">Something else here</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </div>
         )
     }

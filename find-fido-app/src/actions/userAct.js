@@ -1,6 +1,6 @@
 import {userConst} from '../constants/userConst';
 import {userServ} from '../api/userServ';
-import {alertsAct} from '../actions/alertsAct'; 
+import {alertsAct} from './alertsAct'; 
 import history from '../helpers/history';
 
 
@@ -106,7 +106,7 @@ function getUser(){
         userServ.getUser()
             .then(user => {
                     dispatch(success(user));
-                    history.push('/getUser');
+                    history.push('/login');
                     console.log(user);
                 },
                 error => {

@@ -13,7 +13,7 @@ class DogProf extends React.Component{
         super(props);
         //fields for user reg form
         this.state = {
-            dog: { }
+            dog: {}
         };
     }
 

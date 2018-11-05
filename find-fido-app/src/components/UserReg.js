@@ -17,7 +17,7 @@ class UserReg extends React.Component{
                 streetAddress: '',
                 city: '',
                 state: '',
-                zip: '',
+                zipCode: '',
                 email: '',
                 phone: ''
             },
@@ -62,11 +62,10 @@ class UserReg extends React.Component{
                         <h1>New Account</h1>
                         <p>Please fill in this form to create an account.</p>
                         <hr />
-
-                        <label htmlFor="username"><b>Email</b></label>
+                        <label htmlFor="username"><b>Username:</b></label>
                         <input type="text" placeholder="Enter Username" name="username" value={users.username} onChange={this.handleChange} required />
 
-                        <label htmlFor="password"><b>Password</b></label>
+                        <label htmlFor="password"><b>Password:</b></label>
                         <input type="password" placeholder="Enter Password" name="password" value={users.password} onChange={this.handleChange} required />
 
                         <label htmlFor="firstName"><b>First Name:</b></label>
@@ -85,7 +84,7 @@ class UserReg extends React.Component{
                         <input type="Text" placeholder="Enter State" name="state" value={users.state} onChange={this.handleChange} required />
                         
                         <label htmlFor="zip"><b>Zip:</b></label>
-                            <input type="Text" placeholder="Enter Zip" name="zip" value={users.zip} onChange={this.handleChange} required />
+                            <input type="Text" placeholder="Enter Zip Code" name="zipCode" value={users.zipCode} onChange={this.handleChange} required />
                         
                         <label htmlFor="email"><b>Email:</b></label>
                         <input type="Text" placeholder="Enter Email" name="email" value={users.email} onChange={this.handleChange} required />
@@ -94,7 +93,7 @@ class UserReg extends React.Component{
                         <input type="Text" placeholder="Enter Phone" name="phone" value={users.phone} onChange={this.handleChange} required />
                         <hr />
 
-                        <button type="submit" className="registerbtn">Register</button>
+                        <button  className="registerbtn">Register</button>
                         {registering}
                     </div>
 

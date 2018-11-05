@@ -52,8 +52,8 @@ class UserAcct extends React.Component{
                         <div className="column-data">{users.state}</div>
                     </div>
                     <div className="row">
-                        <div className="column-label">Zip: </div>
-                        <div className="column-data">{users.zip}</div>
+                        <div className="column-label">Zip Code: </div>
+                        <div className="column-data">{users.zipCode}</div>
                     </div>
                     <div className="row">
                         <div className="column-label">Email: </div>
